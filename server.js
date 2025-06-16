@@ -3,6 +3,7 @@ const app=exp();
 const mongoClient=require('mongodb').MongoClient
 require('dotenv').config()
 const path=require('path')
+const cors=require('cors')
 
 
 //deploy react bulid into the server
@@ -10,6 +11,10 @@ app.use(exp.static(path.join(__dirname,'../client/build')))
 //body parser
 app.use(exp.json())
 
+app.use(cors({
+  origin: 'https://incandescent-frangollo-e2b034.netlify.app',
+  credentials: true
+}));
 
 //connect to db
 mongoClient.connect(process.env.DB_URL)
