@@ -12,7 +12,7 @@ app.use(exp.static(path.join(__dirname,'../client/build')))
 app.use(exp.json())
 
 app.use(cors({
-  origin: 'https://aquamarine-stardust-6b2017.netlify.app',
+  origin: 'https://dytbyronin.netlify.app/',
   credentials: true
 }));
 
